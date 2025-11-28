@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - Myportfolio.com</title>
+  <link rel="stylesheet" href="materialize/css/materialize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      font-family: cursive, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #193142;
+      padding: 10px 0;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #193142, #2f4f6f);
+      color: white;
+    }
+    header h2 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 18px;
+    }
+    .contact-section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .contact-section h3 {
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .contact-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: cursive;
+    }
+    .contact-form button {
+      background-color: #193142;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background-color: #2f4f6f;
+    }
+    footer {
+      background-color: #193142;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer a {
+      color: #f1f1f1;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo" style="font-family: cursive;">Chikamso</a>
+      <ul class="right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about us.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h2>Contact Me</h2>
+    <p>Let’s build something amazing together — reach out to me below!</p>
+  </header>
+<!-- Contact Section -->
+<section class="contact-section">
+  <h3>Get in Touch</h3>
+
+  <!-- Contact Info -->
+  <div class="contact-info">
+    <p><i class="material-icons">phone</i> +234 913-515-8022</p>
+    <p><i class="material-icons">email</i> kimmaxchijioke@gmail.com</p>
+    <p><i class="material-icons">location_on</i> Abuja, Nigeria</p>
+  </div>
+
+  <!-- WhatsApp Contact Form -->
+  <form class="contact-form" onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send via WhatsApp</button>
+  </form>
+</section>
+
+<!-- <script>
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let whatsappMessage = Hello, my name is ${name}.\nEmail: ${email}\nMessage: ${message};
+    let phoneNumber = "2349135158022"; // your WhatsApp number (remove leading +)
+
+    let url = https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)};
+    window.open(url, "_blank");
+  }
+</script> -->
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h5>Chikamso .P. Chijioke</h5>
+      <p>Front-End Developer | Creating clean & modern websites</p>
+    </div>
+    <div style="margin: 15px 0;">
+      <a href="mailto:kimmaxchijioke@gmail.com">Email</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+    </div>
+    <p style="margin-top: 10px; font-size: 14px;">&copy; 2025 Chikmasoportfoliosite.com | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

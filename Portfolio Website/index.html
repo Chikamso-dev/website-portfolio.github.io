@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Myportfolio.com</title>
+  <link rel="stylesheet" href="materialize/css/materialize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+  <style>
+    body {
+      font-family: cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    /* ===== Preloader ===== */
+    #preloader {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ffffff;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #193142;
+      border-radius: 50%;
+      width: 60px; height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    body.loaded #preloader {
+      display: none;
+    }
+
+    /* ===== Navbar ===== */
+    nav {
+      background-color: #193142;
+      padding: 10px 0;
+    }
+    nav ul li a {
+      color: white;
+      font-weight: bold;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #193142, #2f4f6f);
+      color: white;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .hero a {
+      background-color: white;
+      color: #193142;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .hero a:hover {
+      background-color: #ddd;
+    }
+
+    /* ===== Projects Preview ===== */
+    .projects {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .projects h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .splide__slide img {
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* ===== About Preview ===== */
+    .about-preview {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .about-preview h2 {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .about-preview p {
+      color: #333;
+      line-height: 1.8;
+    }
+    .about-preview a {
+      background-color: #193142;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .about-preview a:hover {
+      background-color: #2f4f6f;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: #193142;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer a {
+      color: #f1f1f1;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo" style="font-family: cursive;">Chikamso</a>
+      <ul class="right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about us.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Hello, I'm Chikamso 👋</h1>
+    <p>A Front-End Developer with 4–5 years of experience creating responsive and modern websites. My expertise includes HTML, CSS, JavaScript, and modern frameworks like React and Bootstrap, which I use to create clean and efficient web solutions. I focus on delivering high-quality code, smooth user experiences, and designs that bring ideas to life.</p>
+    <a href="about us.html">Learn More About Me</a>
+  </section>
+
+  <!-- Projects Preview -->
+  <section class="projects">
+    <h2>My Recent Projects</h2>
+    <div id="project-carousel" class="splide" aria-label="My Projects">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><img src="img/Screenshot 2025-09-02 214546.jpg" alt="Project 1" style="width:100%;"></li>
+          <li class="splide__slide"><img src="img/job 3.jpg" alt="Project 2" style="width:100%;"></li>
+          <li class="splide__slide"><img src="img/job 2.jpg" alt="Project 3" style="width:100%;"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Splide JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#project-carousel', {
+        type   : 'loop',
+        perPage: 1,
+        autoplay: true,
+        interval: 3000,
+        arrows: true,
+        pagination: true,
+      }).mount();
+    });
+  </script>
+
+  <!-- About Preview -->
+  <section class="about-preview">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate Front-End Developer with strong experience in HTML, CSS, JavaScript, React, 
+      and modern frameworks. I focus on creating responsive, user-friendly, and visually appealing websites.  
+      Want to know more about my journey and skills?
+    </p>
+    <a href="about us.html">Read More</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h5>Chikamso .P. Chijioke</h5>
+      <p>Front-End Developer | Building clean & modern websites</p>
+    </div>
+    <div style="margin: 15px 0;">
+      <a href="mailto:kimmaxchijioke@gmail.com">Email</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+    </div>
+    <p style="margin-top: 10px; font-size: 14px;">&copy; 2025 Kimmaxwebsite.com | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
